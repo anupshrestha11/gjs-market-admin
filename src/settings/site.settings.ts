@@ -71,6 +71,11 @@ export const siteSettings = {
                 label: "sidebar-nav-item-tags",
                 icon: "TagIcon",
             },
+      {
+        href: ROUTES.GRAPES_JS,
+        label: "sidebar-nav-item-grapes-js",
+        icon: "TagIcon",
+      },
             // {
             //     href: ROUTES.MANUFACTURERS,
             //     label: "sidebar-nav-item-manufacturers",

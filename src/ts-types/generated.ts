@@ -290,6 +290,18 @@ export declare type Category = {
 	created_at: Scalars["DateTime"];
 	updated_at: Scalars["DateTime"];
 };
+export declare type GrapesJs = {
+	id: Scalars["ID"];
+	name: Scalars["String"];
+	slug: Scalars["String"];
+	parent?: Maybe<Scalars["Int"]>;
+	children: Array<GrapesJs>;
+	details?: Maybe<Scalars["String"]>;
+	type: Type;
+	products: Array<Product>;
+	created_at: Scalars["DateTime"];
+	updated_at: Scalars["DateTime"];
+};
 export declare type Attachment = {
 	thumbnail?: Maybe<Scalars["String"]>;
 	original?: Maybe<Scalars["String"]>;
@@ -329,6 +341,11 @@ export declare type CategoryPaginator = {
 	paginatorInfo: PaginatorInfo;
 	/** A list of Category items. */
 	data: Array<Category>;
+};
+
+export declare type GrapesJsPaginator = {
+	paginatorInfo: PaginatorInfo;
+	data: Array<GrapesJs>;
 };
 
 /** A paginated list of Coupon items. */
@@ -408,6 +425,12 @@ export declare type CreateCategory = {
 	image?: Maybe<AttachmentInput>;
 	icon?: Maybe<Scalars["String"]>;
 };
+export declare type CreateGrapesJs = {
+	name: Scalars["String"];
+	type_id?: Maybe<Scalars["ID"]>;
+	parent?: Maybe<Scalars["Int"]>;
+	details?: Maybe<Scalars["String"]>;
+};
 export declare type ConnectTypeBelongsTo = {
 	connect?: Maybe<Scalars["ID"]>;
 };
@@ -423,6 +446,12 @@ export declare type UpdateCategory = {
 	details?: Maybe<Scalars["String"]>;
 	image?: Maybe<AttachmentInput>;
 	icon?: Maybe<Scalars["String"]>;
+};
+export declare type UpdateGrapesJs = {
+	name?: Maybe<Scalars["String"]>;
+	type_id?: Maybe<Scalars["ID"]>;
+	parent?: Maybe<Scalars["Int"]>;
+	details?: Maybe<Scalars["String"]>;
 };
 export declare type CheckoutVerificationInput = {
 	amount: Scalars["Float"];
@@ -702,20 +731,20 @@ export type SeoSettings = {
 };
 
 export type SettingsOptions = {
-  contactDetails?: Maybe<ContactDetails>;
-  currency?: Maybe<Scalars["String"]>;
-  deliveryTime?: Maybe<Array<Maybe<DeliveryTime>>>;
-  facebook?: Maybe<FacebookSettings>;
-  google?: Maybe<GoogleSettings>;
-  logo?: Maybe<Attachment>;
-  minimumOrderAmount?: Maybe<Scalars["Float"]>;
-  seo?: Maybe<SeoSettings>;
-  shippingClass?: Maybe<Scalars["String"]>;
-  siteSubtitle?: Maybe<Scalars["String"]>;
-  siteTitle?: Maybe<Scalars["String"]>;
-  taxClass?: Maybe<Scalars["String"]>;
-  signupPoints: Maybe<Scalars["Int"]>;
-  maximumQuestionLimit: Maybe<Scalars["Int"]>;
+	contactDetails?: Maybe<ContactDetails>;
+	currency?: Maybe<Scalars["String"]>;
+	deliveryTime?: Maybe<Array<Maybe<DeliveryTime>>>;
+	facebook?: Maybe<FacebookSettings>;
+	google?: Maybe<GoogleSettings>;
+	logo?: Maybe<Attachment>;
+	minimumOrderAmount?: Maybe<Scalars["Float"]>;
+	seo?: Maybe<SeoSettings>;
+	shippingClass?: Maybe<Scalars["String"]>;
+	siteSubtitle?: Maybe<Scalars["String"]>;
+	siteTitle?: Maybe<Scalars["String"]>;
+	taxClass?: Maybe<Scalars["String"]>;
+	signupPoints: Maybe<Scalars["Int"]>;
+	maximumQuestionLimit: Maybe<Scalars["Int"]>;
 };
 
 export declare type LoginInput = {
@@ -1171,66 +1200,66 @@ export declare type ManufacturerPaginator = {
 };
 
 export declare type ReplyQuestion = {
-  question?: Scalars["String"];
-  answer: Scalars["String"];
+	question?: Scalars["String"];
+	answer: Scalars["String"];
 };
 
 export declare type Question = {
-  id: Scalars["ID"];
-  user_id: Scalars["Int"];
-  product_id: Scalars["Int"];
-  shop_id: Scalars["Int"];
-  question?: Scalars["String"];
-  answer: Scalars["String"];
-  created_at: Scalars["DateTime"];
-  updated_at: Scalars["DateTime"];
-  positive_feedbacks_count?: Scalars["Int"];
-  negative_feedbacks_count?: Scalars["Int"];
-  product: Product;
-  user: User;
+	id: Scalars["ID"];
+	user_id: Scalars["Int"];
+	product_id: Scalars["Int"];
+	shop_id: Scalars["Int"];
+	question?: Scalars["String"];
+	answer: Scalars["String"];
+	created_at: Scalars["DateTime"];
+	updated_at: Scalars["DateTime"];
+	positive_feedbacks_count?: Scalars["Int"];
+	negative_feedbacks_count?: Scalars["Int"];
+	product: Product;
+	user: User;
 };
 export declare type ApproveQuestionAnswerInput = {
-  id: Scalars["ID"];
-  question_answer: Scalars["String"];
+	id: Scalars["ID"];
+	question_answer: Scalars["String"];
 };
 /** A paginated list of Question items. */
 export declare type QuestionPaginator = {
-  /** Question information about the list of items. */
-  paginatorInfo: PaginatorInfo;
-  /** A list of Question items. */
-  data: Array<Question>;
+	/** Question information about the list of items. */
+	paginatorInfo: PaginatorInfo;
+	/** A list of Question items. */
+	data: Array<Question>;
 };
 
 export declare type Review = {
-  id: Scalars["ID"];
-  user_id: Scalars["Int"];
-  product_id: Scalars["Int"];
-  rating: Scalars["Int"];
-  comment?: Scalars["String"];
-  photos?: Maybe<Attachment>;
-  created_at: Scalars["DateTime"];
-  updated_at: Scalars["DateTime"];
-  positive_feedbacks_count?: Scalars["Int"];
-  negative_feedbacks_count?: Scalars["Int"];
-  product: Product;
-  user: User;
+	id: Scalars["ID"];
+	user_id: Scalars["Int"];
+	product_id: Scalars["Int"];
+	rating: Scalars["Int"];
+	comment?: Scalars["String"];
+	photos?: Maybe<Attachment>;
+	created_at: Scalars["DateTime"];
+	updated_at: Scalars["DateTime"];
+	positive_feedbacks_count?: Scalars["Int"];
+	negative_feedbacks_count?: Scalars["Int"];
+	product: Product;
+	user: User;
 };
 
 export declare type ReplyReview = {
-  id: Scalars["ID"];
-  product_id: Scalars["Int"];
-  rating?: Scalars["Int"];
+	id: Scalars["ID"];
+	product_id: Scalars["Int"];
+	rating?: Scalars["Int"];
 };
 export declare type UpdateReview = {
-  id: Scalars["ID"];
-  product_id: Scalars["Int"];
-  rating?: Scalars["Int"];
+	id: Scalars["ID"];
+	product_id: Scalars["Int"];
+	rating?: Scalars["Int"];
 };
 
 /** A paginated list of Review items. */
 export declare type ReviewPaginator = {
-  /** Review information about the list of items. */
-  paginatorInfo: PaginatorInfo;
-  /** A list of Review items. */
-  data: Array<Review>;
+	/** Review information about the list of items. */
+	paginatorInfo: PaginatorInfo;
+	/** A list of Review items. */
+	data: Array<Review>;
 };

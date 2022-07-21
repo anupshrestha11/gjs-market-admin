@@ -51,5 +51,6 @@ export const API_ENDPOINTS = {
   REVIEWS: "reviews",
   ABUSIVE_REPORTS_DECLINE: "abusive_reports/reject",
   ABUSIVE_REPORTS: "abusive_reports",
-  EXPORT_ORDER: "export-order-url"
+  EXPORT_ORDER: "export-order-url",
+  GRAPES_JS: "grapes-js",
 };

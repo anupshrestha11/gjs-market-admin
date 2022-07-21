@@ -27,6 +27,15 @@ export type CategoriesQueryOptionsType = {
   orderBy?: string;
   sortedBy?: SortOrder;
 };
+export type GrapesJsQueryOptionsType = {
+  type?: string;
+  text?: string;
+  page?: number;
+  parent?: number | null;
+  limit?: number;
+  orderBy?: string;
+  sortedBy?: SortOrder;
+};
 export type TagsQueryOptionsType = {
   type?: string;
   text?: string;
