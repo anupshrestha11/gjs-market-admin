@@ -5,7 +5,7 @@ interface SelectInputProps {
   control: any;
   rules?: any;
   name: string;
-  options: object[];
+  options: object[] | any;
   [key: string]: unknown;
 }
 

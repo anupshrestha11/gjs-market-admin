@@ -426,10 +426,8 @@ export declare type CreateCategory = {
 	icon?: Maybe<Scalars["String"]>;
 };
 export declare type CreateGrapesJs = {
-	name: Scalars["String"];
-	type_id?: Maybe<Scalars["ID"]>;
+	version: Scalars["String"];
 	parent?: Maybe<Scalars["Int"]>;
-	details?: Maybe<Scalars["String"]>;
 };
 export declare type ConnectTypeBelongsTo = {
 	connect?: Maybe<Scalars["ID"]>;
@@ -448,10 +446,8 @@ export declare type UpdateCategory = {
 	icon?: Maybe<Scalars["String"]>;
 };
 export declare type UpdateGrapesJs = {
-	name?: Maybe<Scalars["String"]>;
-	type_id?: Maybe<Scalars["ID"]>;
+	version?: Maybe<Scalars["String"]>;
 	parent?: Maybe<Scalars["Int"]>;
-	details?: Maybe<Scalars["String"]>;
 };
 export declare type CheckoutVerificationInput = {
 	amount: Scalars["Float"];
