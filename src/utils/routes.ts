@@ -31,5 +31,5 @@ export const ROUTES = {
   CHECKOUT: "/orders/checkout",
   REVIEWS: "/reviews",
   QUESTIONS: "/questions",
-  GRAPES_JS: "/grape-js",
+  GRAPES_JS: "/grapes-js",
 };

@@ -14,6 +14,9 @@ const ShippingDeleteView = dynamic(
 const CategoryDeleteView = dynamic(
 	() => import("@components/category/category-delete-view")
 );
+const GrapesJsDeleteView = dynamic(
+  () => import("@components/grapes-js/grapes-js-delete-view")
+);
 const CouponDeleteView = dynamic(
 	() => import("@components/coupon/coupon-delete-view")
 );
@@ -105,6 +108,8 @@ function renderModal(view: MODAL_VIEWS | undefined, data: any) {
       return <AttributeDeleteView />;
     case "DELETE_CATEGORY":
       return <CategoryDeleteView />;
+    case "DELETE_GRAPES_JS":
+      return <GrapesJsDeleteView />;
     // case "DELETE_ORDER":
     //   return <OrderDeleteView />;
     case "DELETE_COUPON":

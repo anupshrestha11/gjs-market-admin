@@ -98,7 +98,7 @@ const GrapesJsList = ({ grapesjs, onPagination, onSort, onOrder }: IProps) => {
         <ActionButtons
           id={id}
           editUrl={`${ROUTES.GRAPES_JS}/edit/${id}`}
-          deleteModalView="DELETE_GRAPEJS"
+          deleteModalView="DELETE_GRAPES_JS"
         />
       ),
     },
