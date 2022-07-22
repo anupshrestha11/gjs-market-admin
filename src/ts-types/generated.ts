@@ -610,8 +610,8 @@ export declare type CreateProduct = {
 	type_id: Scalars["String"];
 	price: Scalars["Float"];
 	sale_price?: Maybe<Scalars["Float"]>;
-	quantity: Scalars["Int"];
-	unit: Scalars["String"];
+	quantity?: Scalars["Int"];
+	unit?: Scalars["String"];
 	description?: Maybe<Scalars["String"]>;
 	categories?: Maybe<Array<Scalars["ID"]>>;
 	variations?: Maybe<Array<AttributeProductPivot>>;

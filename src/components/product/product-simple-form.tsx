@@ -23,7 +23,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
 
   const is_digital = watch("is_digital");
   const is_external = watch("is_external");
-
+  const is_paid = watch("type");
   return (
     <div className="flex flex-wrap my-5 sm:my-8">
       <Description
@@ -37,39 +37,18 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
       />
 
       <Card className="w-full sm:w-8/12 md:w-2/3">
-        <Input
-          label={`${t("form:input-label-price")}*`}
-          {...register("price")}
-          type="number"
-          error={t(errors.price?.message!)}
-          variant="outline"
-          className="mb-5"
-        />
-        <Input
-          label={t("form:input-label-sale-price")}
-          type="number"
-          {...register("sale_price")}
-          error={t(errors.sale_price?.message!)}
-          variant="outline"
-          className="mb-5"
-        />
-
-        <Input
-          label={`${t("form:input-label-quantity")}*`}
-          type="number"
-          {...register("quantity")}
-          error={t(errors.quantity?.message!)}
-          variant="outline"
-          className="mb-5"
-        />
-
-        <Input
-          label={`${t("form:input-label-sku")}*`}
-          {...register("sku")}
-          error={t(errors.sku?.message!)}
-          variant="outline"
-          className="mb-5"
-        />
+        {is_paid && is_paid.name === "Paid" ? (
+          <Input
+            label={`${t("form:input-label-price")}*`}
+            {...register("price")}
+            type="number"
+            error={t(errors.price?.message!)}
+            variant="outline"
+            className="mb-5"
+          />
+        ) : (
+          ""
+        )}
 
         <Input
           label={`${t("form:input-label-preview-url")}`}
@@ -78,7 +57,6 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
           variant="outline"
           className="mb-5"
         />
-
         {/* <Input
           label={t("form:input-label-width")}
           {...register("width")}
@@ -107,7 +85,6 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
           disabled={Boolean(is_external)}
           className="mb-5"
         /> */}
-
         {/* <Checkbox
           {...register("is_external")}
           id="is_external"
@@ -115,7 +92,6 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
           disabled={Boolean(is_digital)}
           className="mb-5"
         /> */}
-
         <>
           <Label>{t("form:input-label-digital-file")}</Label>
           <FileInput

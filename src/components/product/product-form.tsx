@@ -182,7 +182,6 @@ export default function CreateOrUpdateProductForm({
               <ProductCategoryInput control={control} setValue={setValue} />
               {/* <ProductAuthorInput control={control} /> */}
               {/* <ProductManufacturerInput control={control} setValue={setValue} /> */}
-              <ProductTagInput control={control} setValue={setValue} />
             </Card>
           </div>
 
@@ -206,14 +205,6 @@ export default function CreateOrUpdateProductForm({
                 className="mb-5"
               />
 
-              <Input
-                label={`${t("form:input-label-unit")}*`}
-                {...register("unit")}
-                error={t(errors.unit?.message!)}
-                variant="outline"
-                className="mb-5"
-              />
-
               <TextArea
                 label={t("form:input-label-description")}
                 {...register("description")}
@@ -222,7 +213,9 @@ export default function CreateOrUpdateProductForm({
                 className="mb-5"
               />
 
-              <div>
+              <ProductTagInput control={control} setValue={setValue} />
+
+              <div className="mt-5">
                 <Label>{t("form:input-label-status")}</Label>
                 <Radio
                   {...register("status")}
