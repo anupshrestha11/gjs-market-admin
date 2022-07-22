@@ -62,7 +62,7 @@ const GrapesJsList = ({ grapesjs, onPagination, onSort, onOrder }: IProps) => {
           ascending={
             sortingObj.sort === SortOrder.Asc && sortingObj.column === "version"
           }
-          isActive={sortingObj.column === "name"}
+          isActive={sortingObj.column === "version"}
         />
       ),
       className: "cursor-pointer",
@@ -70,7 +70,7 @@ const GrapesJsList = ({ grapesjs, onPagination, onSort, onOrder }: IProps) => {
       key: "version",
       align: alignLeft,
       width: "30%",
-      onHeaderCell: () => onHeaderClick("name"),
+      onHeaderCell: () => onHeaderClick("version"),
     },
     {
       title: t("table:table-item-slug"),

@@ -24,7 +24,7 @@ const fetchGrapesJs = async ({
   } = params as GrapesJsQueryOptionsType;
 
   const searchString = stringifySearchQuery({
-    name: text,
+    version: text,
     type,
   });
   // @ts-ignore
