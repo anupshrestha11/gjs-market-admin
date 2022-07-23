@@ -148,6 +148,7 @@ export declare type Product = {
 	max_price?: Maybe<Scalars["Float"]>;
 	min_price?: Maybe<Scalars["Float"]>;
 	categories: Array<Category>;
+	grapes_js: Array<GrapesJs>;
 	variations?: Maybe<Array<Maybe<AttributeValue>>>;
 	variation_options?: Maybe<Array<Maybe<Variation>>>;
 	digital_file?: Maybe<DigitalFile>;
@@ -292,13 +293,10 @@ export declare type Category = {
 };
 export declare type GrapesJs = {
 	id: Scalars["ID"];
-	name: Scalars["String"];
+	version: Scalars["String"];
 	slug: Scalars["String"];
 	parent?: Maybe<Scalars["Int"]>;
 	children: Array<GrapesJs>;
-	details?: Maybe<Scalars["String"]>;
-	type: Type;
-	products: Array<Product>;
 	created_at: Scalars["DateTime"];
 	updated_at: Scalars["DateTime"];
 };
@@ -614,6 +612,7 @@ export declare type CreateProduct = {
 	unit?: Scalars["String"];
 	description?: Maybe<Scalars["String"]>;
 	categories?: Maybe<Array<Scalars["ID"]>>;
+	grapes_js?: Maybe<Array<Scalars["ID"]>>;
 	variations?: Maybe<Array<AttributeProductPivot>>;
 	in_stock?: Maybe<Scalars["Boolean"]>;
 	is_taxable?: Maybe<Scalars["Boolean"]>;
@@ -658,6 +657,7 @@ export declare type UpdateProduct = {
 	unit: Scalars["String"];
 	description?: Maybe<Scalars["String"]>;
 	categories?: Maybe<Array<Scalars["ID"]>>;
+	grapes_js?: Maybe<Array<Scalars["ID"]>>;
 	variations?: Maybe<Array<AttributeProductPivot>>;
 	in_stock?: Maybe<Scalars["Boolean"]>;
 	is_taxable?: Maybe<Scalars["Boolean"]>;

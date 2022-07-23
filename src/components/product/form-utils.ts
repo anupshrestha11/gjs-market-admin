@@ -8,6 +8,7 @@ import {
   Tag,
   AttachmentInput,
   VariationOption,
+  GrapesJs,
 } from '@ts-types/generated';
 import groupBy from 'lodash/groupBy';
 import orderBy from 'lodash/orderBy';
@@ -20,11 +21,12 @@ import { cartesian } from '@utils/cartesian';
 
 export type ProductFormValues = Omit<
   CreateProduct,
-  'type_id' | 'shop_id' | 'categories' | 'tags' | 'digital_file'
+  'type_id' | 'shop_id' | 'categories' | 'tags' | 'digital_file' | 'grapes_js'
 > & {
   type: Pick<Type, 'id' | 'name'>;
   product_type: ProductTypeOption;
   categories: Pick<Category, 'id' | 'name'>[];
+  grapes_js: Pick<GrapesJs, 'id' | 'version'>[];
   tags: Pick<Tag, 'id' | 'name'>[];
   digital_file_input: AttachmentInput;
   digital_file: AttachmentInput;
@@ -72,7 +74,7 @@ export function calculateMinMaxPrice(variationOptions: any) {
   return {
     min_price:
       sortedVariationsBySalePrice?.[0].sale_price <
-      sortedVariationsByPrice?.[0]?.price
+        sortedVariationsByPrice?.[0]?.price
         ? sortedVariationsBySalePrice?.[0].sale_price
         : sortedVariationsByPrice?.[0]?.price,
     max_price:
@@ -177,6 +179,7 @@ export function getProductInputValues(
     image,
     is_digital,
     categories,
+    grapes_js,
     tags,
     digital_file,
     digital_file_input,
@@ -190,6 +193,7 @@ export function getProductInputValues(
     type_id: type?.id,
     product_type: 'simple',
     categories: categories.map((category) => category?.id),
+    grapes_js: grapes_js.map((grape_js) => grape_js?.id),
     tags: tags.map((tag) => tag?.id),
     image: omitTypename<any>(image),
     gallery: values.gallery?.map((gi: any) => omitTypename(gi)),

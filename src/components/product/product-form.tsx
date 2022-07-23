@@ -45,6 +45,7 @@ import {
   getProductInputValues,
   ProductFormValues,
 } from "./form-utils";
+import ProductGrapesJsInput from "./product-grapes-js-input-copy";
 
 type ProductFormProps = {
   initialValues?: Product | null;
@@ -130,6 +131,8 @@ export default function CreateOrUpdateProductForm({
   const product_type = watch("product_type");
   const is_digital = watch("is_digital");
   const is_external = watch("is_external");
+  const categories = watch("categories");
+  const grapes_js = watch("grapes_js");
   return (
     <>
       {errorMessage ? (
@@ -180,6 +183,7 @@ export default function CreateOrUpdateProductForm({
                 error={t((errors?.type as any)?.message)}
               />
               <ProductCategoryInput control={control} setValue={setValue} />
+              <ProductGrapesJsInput control={control} setValue={setValue} />
               {/* <ProductAuthorInput control={control} /> */}
               {/* <ProductManufacturerInput control={control} setValue={setValue} /> */}
             </Card>

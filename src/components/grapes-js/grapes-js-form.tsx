@@ -15,7 +15,7 @@ import SelectInput from "@components/ui/select-input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { grapesJsValidationSchema } from "./grapes-js-validation-schema";
 
-function SelectCategories({
+function SelectGrapesJs({
   control,
   setValue,
 }: {
@@ -128,7 +128,7 @@ export default function CreateOrUpdateGrapesJsForm({ initialValues }: IProps) {
             className="mb-5"
           />
 
-          <SelectCategories control={control} setValue={setValue} />
+          <SelectGrapesJs control={control} setValue={setValue} />
         </Card>
       </div>
       <div className="mb-4 text-end">
