@@ -95,6 +95,7 @@ export function getProductDefaultValues(product: Product) {
       min_price: 0.0,
       max_price: 0.0,
       categories: [],
+      grapes_js: [],
       tags: [],
       in_stock: true,
       is_taxable: false,
