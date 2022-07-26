@@ -45,7 +45,7 @@ import {
   getProductInputValues,
   ProductFormValues,
 } from "./form-utils";
-import ProductGrapesJsInput from "./product-grapes-js-input-copy";
+import ProductGrapesJsInput from "./product-grapes-js-input";
 
 type ProductFormProps = {
   initialValues?: Product | null;

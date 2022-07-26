@@ -51,7 +51,7 @@ export default function GrapesJS() {
           <div className="mb-4 md:w-1/4 md:mb-0">
             <h1 className="text-xl font-semibold text-heading">
               {/* {t("form:input-label-categories")} */}
-              GrapesJS
+              Version GrapesJS
             </h1>
           </div>
 
@@ -70,7 +70,9 @@ export default function GrapesJS() {
               href={`${ROUTES.GRAPES_JS}/create`}
               className="w-full h-12 md:ms-6 md:w-auto"
             >
-              <span className="block md:hidden xl:block">+ Add GrapesJS</span>
+              <span className="block md:hidden xl:block">
+                + Add Version GrapesJS
+              </span>
               <span className="hidden md:block xl:hidden">
                 + {t("form:button-label-add")}
               </span>

@@ -115,7 +115,7 @@ export default function CreateOrUpdateGrapesJsForm({ initialValues }: IProps) {
             initialValues
               ? t("form:item-description-edit")
               : t("form:item-description-add")
-          } ${"GrapesJs"}`}
+          } ${"Version GrapesJS"}`}
           className="w-full px-0 sm:pe-4 md:pe-5 pb-5 sm:w-4/12 md:w-1/3 sm:py-8 "
         />
 
@@ -144,7 +144,7 @@ export default function CreateOrUpdateGrapesJsForm({ initialValues }: IProps) {
         )}
 
         <Button loading={creating || updating}>
-          {initialValues ? "Update GrapeJs" : "Add GrapesJs"}
+          {initialValues ? "Update Version GrapeJs" : "Add Version GrapesJs"}
         </Button>
       </div>
     </form>

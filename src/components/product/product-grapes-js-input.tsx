@@ -22,7 +22,7 @@ const ProductGrapesJsInput = ({ control, setValue }: Props) => {
 
   return (
     <div className="mb-5">
-      <Label>GrapesJS</Label>
+      <Label>Version GrapesJS</Label>
       <SelectInput
         name="grapes_js"
         isMulti

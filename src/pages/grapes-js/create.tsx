@@ -10,7 +10,7 @@ export default function CreateGrapesJsPage() {
       <div className="py-5 sm:py-8 flex border-b border-dashed border-border-base">
         <h1 className="text-lg font-semibold text-heading">
           {/* {t("form:form-title-create-category")} */}
-          Create New GrapesJS
+          Create New Version GrapesJS
         </h1>
       </div>
       <CreateOrUpdateGrapesJsForm />
