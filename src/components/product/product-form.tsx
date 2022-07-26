@@ -128,11 +128,9 @@ export default function CreateOrUpdateProductForm({
       );
     }
   };
-  const product_type = watch("product_type");
-  const is_digital = watch("is_digital");
-  const is_external = watch("is_external");
-  const categories = watch("categories");
-  const grapes_js = watch("grapes_js");
+
+  const is_paid = watch("type");
+
   return (
     <>
       {errorMessage ? (
@@ -182,6 +180,18 @@ export default function CreateOrUpdateProductForm({
                 control={control}
                 error={t((errors?.type as any)?.message)}
               />
+              {(is_paid && is_paid.name === "Paid") ? (
+                <Input
+                  label={`${t("form:input-label-price")}*`}
+                  {...register("price")}
+                  type="number"
+                  error={t(errors.price?.message!)}
+                  variant="outline"
+                  className="mb-5"
+                />
+              ) : (
+                ""
+              )}
               <ProductCategoryInput control={control} setValue={setValue} />
               <ProductGrapesJsInput control={control} setValue={setValue} />
               {/* <ProductAuthorInput control={control} /> */}
@@ -192,11 +202,10 @@ export default function CreateOrUpdateProductForm({
           <div className="flex flex-wrap my-5 sm:my-8">
             <Description
               title={t("form:item-description")}
-              details={`${
-                initialValues
-                  ? t("form:item-description-edit")
-                  : t("form:item-description-add")
-              } ${t("form:product-description-help-text")}`}
+              details={`${initialValues
+                ? t("form:item-description-edit")
+                : t("form:item-description-add")
+                } ${t("form:product-description-help-text")}`}
               className="w-full px-0 pb-5 sm:pe-4 md:pe-5 sm:w-4/12 md:w-1/3 sm:py-8"
             />
 

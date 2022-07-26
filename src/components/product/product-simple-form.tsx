@@ -37,18 +37,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
       />
 
       <Card className="w-full sm:w-8/12 md:w-2/3">
-        {is_paid && is_paid.name === "Paid" ? (
-          <Input
-            label={`${t("form:input-label-price")}*`}
-            {...register("price")}
-            type="number"
-            error={t(errors.price?.message!)}
-            variant="outline"
-            className="mb-5"
-          />
-        ) : (
-          ""
-        )}
+
 
         <Input
           label={`${t("form:input-label-preview-url")}`}
