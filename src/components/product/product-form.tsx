@@ -226,7 +226,7 @@ export default function CreateOrUpdateProductForm({
                 className="mb-5"
               />
 
-              <ProductTagInput control={control} setValue={setValue} />
+              <ProductTagInput control={control} setValue={setValue} watch={watch} />
 
               <div className="mt-5">
                 <Label>{t("form:input-label-status")}</Label>

@@ -9,7 +9,7 @@ export interface ITagCreateVariables {
   variables: { input: CreateTag };
 }
 
-export const useCreateTagMutation = () => {
+export const useCreateTagMutation = (redirect = true) => {
   const queryClient = useQueryClient();
   const router = useRouter();
 
@@ -18,7 +18,8 @@ export const useCreateTagMutation = () => {
       Tag.create(API_ENDPOINTS.TAGS, input),
     {
       onSuccess: () => {
-        router.push(ROUTES.TAGS);
+        if (redirect)
+          router.push(ROUTES.TAGS);
       },
       // Always refetch after error or success:
       onSettled: () => {
