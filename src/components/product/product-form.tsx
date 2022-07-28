@@ -46,6 +46,7 @@ import {
   ProductFormValues,
 } from "./form-utils";
 import ProductGrapesJsInput from "./product-grapes-js-input";
+import { useTagsQuery } from "@data/tag/use-tags.query";
 
 type ProductFormProps = {
   initialValues?: Product | null;
@@ -82,6 +83,14 @@ export default function CreateOrUpdateProductForm({
   const { mutate: updateProduct, isLoading: updating } =
     useUpdateProductMutation();
 
+
+
+  const { data: tagData, isLoading: tagLoading, refetch: tagRefetch } = useTagsQuery({
+    limit: 999,
+    // type: type?.slug,
+  });
+
+
   const onSubmit = async (values: ProductFormValues) => {
     const inputValues = getProductInputValues(values, initialValues);
 
@@ -94,6 +103,9 @@ export default function CreateOrUpdateProductForm({
           },
         },
         {
+          onSuccess: () => {
+            tagRefetch()
+          },
           onError: (error: any) => {
             Object.keys(error?.response?.data).forEach((field: any) => {
               setError(field, {
@@ -226,7 +238,7 @@ export default function CreateOrUpdateProductForm({
                 className="mb-5"
               />
 
-              <ProductTagInput control={control} setValue={setValue} watch={watch} />
+              <ProductTagInput control={control} setValue={setValue} watch={watch} data={tagData} loading={tagLoading} />
 
               <div className="mt-5">
                 <Label>{t("form:input-label-status")}</Label>

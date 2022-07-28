@@ -3,10 +3,10 @@ import * as yup from 'yup';
 export const productValidationSchema = yup.object().shape({
   name: yup.string().required('form:error-name-required'),
   // sku: yup.string().nullable().required('form:error-sku-required'),
-  // price: yup
-  //   .number()
-  //   .typeError('form:error-price-must-number')
-  //   .min(0)
+  price: yup
+    .number()
+    .typeError('form:error-price-must-number')
+    .min(0),
   //   .required('form:error-price-required'),
 
   // quantity: yup
