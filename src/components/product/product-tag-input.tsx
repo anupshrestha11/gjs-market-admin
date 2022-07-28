@@ -21,22 +21,14 @@ const ProductTagInput = ({ control, setValue, watch }: Props) => {
     // type: type?.slug,
   });
 
-  const { mutateAsync: createTag } = useCreateTagMutation(false);
 
   const handleCreate = async (value: any) => {
 
-    console.log(value)
     const input = {
-      name: value
+      name: value,
+      id: value
     }
-    await createTag({
-      variables: {
-        input
-      },
-    })
-    refetch().then(resp => {
-      setValue("tags", [...watch('tags'), resp.data?.tags?.data.find(item => item.name === value)])
-    })
+    setValue("tags", [...watch('tags'), input])
   }
 
 
